@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 // Admin Routes
-Route::domain('admin.thecans.test')->group(function () {
+Route::domain(env("APP_SUB_URL"))->group(function () {
     Auth::routes();
 
     Route::middleware('auth')->get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

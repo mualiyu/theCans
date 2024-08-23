@@ -30,7 +30,7 @@
                     <div class="col-sm-6">
                         <div style="display:flex;">
                             <img class="d-flex flex-column justify-content-end position-relative overflow-hidden rounded-circle bg-size-cover bg-position-center"
-                            style="width: 80px; height: 80px;" src="/storage/news/{{$news->image}}"
+                            style="width: 80px; height: 80px;" src="{{$news->image}}"
                             alt="No Image"> <p style="font-size: 12px;">{{$news->image}}</p>
                         </div>
                       {{-- <label class="form-label" for="img">Image</label> --}}
@@ -61,7 +61,7 @@
                           {{-- <label class="form-label" for="heading">Image</label> --}}
                           <div style="display:flex;">
                               <img class="d-flex flex-column justify-content-end position-relative overflow-hidden rounded-circle bg-size-cover bg-position-center"
-                              style="width: 80px; height: 80px;" src="/storage/news/{{$nc->image}}"
+                              style="width: 80px; height: 80px;" src="{{$nc->image}}"
                               alt="No Image"> <p style="font-size: 12px;">{{$nc->image}}</p>
                           </div>
                           <input class="form-control" type="file" value="" id="heading" name="n_image{{$nc->id}}">

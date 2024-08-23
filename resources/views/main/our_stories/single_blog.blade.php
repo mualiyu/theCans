@@ -64,7 +64,7 @@
             <!-- Post content -->
             <figure class="figure">
                 @if ($news->image)
-                <img class="figure-img rounded-5 mb-3" src="/storage/news/{{$news->image}}" alt="{{$news->heading}}">
+                <img class="figure-img rounded-5 mb-3" src="{{$news->image}}" alt="{{$news->heading}}">
                 @endif
                 {{-- <figcaption class="figure-caption">Image source tristique justo et pharetra</figcaption> --}}
             </figure>

@@ -38,7 +38,12 @@ new class extends Component {
             'comment' => $this->comment,
         ]);
 
-        Mail::to(env('SYSTEM_EMAIL'))->send(new BlogComment($this->customer_name, $this->customer_email, $this->comment, $this->news));
+        try {
+            Mail::to(env('SYSTEM_EMAIL'))->send(new BlogComment($this->customer_name, $this->customer_email, $this->comment, $this->news));
+            //code...
+        } catch (\Throwable $th) {
+            // $this->res = "Comment posted successfully!";
+        }
 
         $this->res = "Comment posted successfully!";
 

@@ -21,52 +21,52 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="img">Image</label>
-                        <input class="form-control" type="file" value="" id="img" name="imagei">
+                        <input class="form-control" type="file" value="" id="img" name="imagei" required>
                     </div>
 
                     <div class="col-sm-6">
                       <label class="form-label" for="description">Description</label>
-                      <textarea class="form-control" rows="4" placeholder="Write Description" id="description" name="description"></textarea>
+                      <textarea class="form-control" rows="4" placeholder="Write Description" id="description" required name="description"></textarea>
                     </div>
 
                     <div class="col-sm-6">
                       <label class="form-label" for="benefits">Benefits</label>
-                      <textarea class="form-control" rows="4" placeholder="Write a short benefits" id="benefits" name="benefit"></textarea>
+                      <textarea class="form-control" rows="4" placeholder="Write a short benefits" required id="benefits" name="benefit"></textarea>
                     </div>
 
                     <hr>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_h_d">Price/Half Day</label>
-                        <input class="form-control" type="number" id="p_h_d" value="0" name="price_half_day">
+                        <input class="form-control" type="number" id="p_h_d" value="0" name="price_half_day" required>
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_d">Price/Day</label>
-                        <input class="form-control" type="number" id="p_d" name="price_daily" value="0">
+                        <input class="form-control" type="number" id="p_d" name="price_daily" value="0" required>
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_w">Price/Weekly</label>
-                        <input class="form-control" type="number" id="p_w" name="price_weekly" value="0">
+                        <input class="form-control" type="number" id="p_w" name="price_weekly" value="0" required>
                     </div>
                     <hr>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_m">Price/Month</label>
-                        <input class="form-control" type="number" id="p_m" value="0" name="price_monthly">
+                        <input class="form-control" type="number" id="p_m" value="0" name="price_monthly" required>
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_a">Price/Annually</label>
-                        <input class="form-control" type="number" id="p_a" name="price_annually" value="0">
+                        <input class="form-control" type="number" id="p_a" name="price_annually" value="0" required>
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="nop">Number of Persons</label>
-                        <input class="form-control" type="number" id="nop" name="no_of_persons" value="1">
+                        <input class="form-control" type="number" id="nop" name="no_of_persons" value="1" required>
                     </div>
 
                     <div class="col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text text-dark">Maximum &amp; Minimum number of days/months(i.e., 30 days) per booking:</span>
-                            <input type="number" class="form-control" name="min_no_of_days" placeholder="Min">
+                            <input type="number" class="form-control" name="min_no_of_days" placeholder="Min" required>
                             <span class="border-end border-input"></span>
-                            <input type="number" class="form-control" name="max_no_of_days" placeholder="Max">
+                            <input type="number" class="form-control" name="max_no_of_days" placeholder="Max" required>
                           </div>
                     </div>
 

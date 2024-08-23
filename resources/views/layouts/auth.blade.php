@@ -10,13 +10,13 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('admin_assets/favicon/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('admin_assets/favicon/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin_assets/favicon/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/admin_assets/img/imagesa/logo.svg')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('admin_assets/img/imagesa/logo.svg')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/admin_assets/img/imagesa/logo.svg')}}">
     <link rel="manifest" href="{{asset('admin_assets/favicon/site.webmanifest')}}">
-    <link rel="mask-icon" color="#6366f1" href="{{asset('admin_assets/favicon/safari-pinned-tab.svg')}}">
+    <link rel="mask-icon" color="#6366f1" href="{{asset('/admin_assets/img/imagesa/logo.svg')}}">
     <meta name="msapplication-TileColor" content="#080032">
-    <meta name="msapplication-config" content="{{asset('admin_assets/favicon/browserconfig.xml')}}">
+    <meta name="msapplication-config" content="{{asset('/admin_assets/img/imagesa/logo.svg')}}">
     <meta name="theme-color" content="white">
     <!-- Theme mode-->
     <script>

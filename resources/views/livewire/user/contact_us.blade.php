@@ -27,9 +27,12 @@ new class extends Component {
         $this->validate();
 
         // Handle form submission, e.g., save the comment to the database
-
-        Mail::to(env('SYSTEM_EMAIL'))->send(new ContactUs($this->customer_name, $this->customer_email, $this->contactMessage));
-
+        try {
+            //code...
+            Mail::to(env('SYSTEM_EMAIL'))->send(new ContactUs($this->customer_name, $this->customer_email, $this->contactMessage));
+        } catch (\Throwable $th) {
+            $this->res = "Failed to post Comment! Try Again.";
+        }
 
         $this->res = "Comment posted successfully!";
 

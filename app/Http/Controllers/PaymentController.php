@@ -22,59 +22,65 @@ class PaymentController extends Controller
 
     public function redirectToGateway(Request $request)
     {
+
+        // Validate request
+        $request->validate([
+            'space_id' => 'required|exists:spaces,id',
+            'booking_type' => 'required',
+            'start_date' => 'required|date|after_or_equal:today',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|string',
+        ]);
+
+        // Get space details
+        $space = Space::find($request->space_id);
+        $bookingId = $this->generateBookingId();
+
+        // Create a new booking
+        $booking = Booking::create([
+            'space_id' => $space->id,
+            'b_id' => $bookingId,
+            'booking_type' => $request->booking_type,
+            'start_date' => $request->start_date,
+            'customer_first_name' => $request->first_name,
+            'customer_last_name' => $request->last_name,
+            'customer_email' => $request->email,
+            'customer_phone' => $request->phone,
+            'total_price' => $this->calculateTotalPrice($space, $request->booking_type),
+        ]);
+
+        $callbackUrl = route('main.payment_call_back');
+        // Add additional data to Paystack request
+        $request->merge([
+            'email' => $booking->customer_email,
+            'first_name' => $booking->customer_first_name,
+            'last_name' => $booking->customer_last_name,
+            'phone' => $booking->customer_phone,
+            'amount' => $booking->total_price * 100, // Paystack requires the amount in kobo
+            'currency' => "NGN",
+            'reference' => Paystack::genTranxRef(),
+            'metadata' => json_encode([
+                'booking_id' => $booking->id,
+                'space_id' => $booking->space_id,
+            ]),
+            'callback_url' => $callbackUrl,
+        ]);
+
         try {
-            // Validate request
-            $request->validate([
-                'space_id' => 'required|exists:spaces,id',
-                'booking_type' => 'required',
-                'start_date' => 'required|date|after_or_equal:today',
-                'first_name' => 'required|string',
-                'last_name' => 'required|string',
-                'email' => 'required|email',
-                'phone' => 'required|string',
-            ]);
-
-            // Get space details
-            $space = Space::find($request->space_id);
-            $bookingId = $this->generateBookingId();
-
-            // Create a new booking
-            $booking = Booking::create([
-                'space_id' => $space->id,
-                'b_id' => $bookingId,
-                'booking_type' => $request->booking_type,
-                'start_date' => $request->start_date,
-                'customer_first_name' => $request->first_name,
-                'customer_last_name' => $request->last_name,
-                'customer_email' => $request->email,
-                'customer_phone' => $request->phone,
-                'total_price' => $this->calculateTotalPrice($space, $request->booking_type),
-            ]);
-
-            $callbackUrl = route('main.payment_call_back');
-            // Add additional data to Paystack request
-            $request->merge([
-                'email' => $booking->customer_email,
-                'first_name' => $booking->customer_first_name,
-                'last_name' => $booking->customer_last_name,
-                'phone' => $booking->customer_phone,
-                'amount' => $booking->total_price * 100, // Paystack requires the amount in kobo
-                'currency' => "NGN",
-                'reference' => Paystack::genTranxRef(),
-                'metadata' => json_encode([
-                    'booking_id' => $booking->id,
-                    'space_id' => $booking->space_id,
-                ]),
-                'callback_url' => $callbackUrl,
-            ]);
-
             Mail::to($booking->customer_email)->send(new InitialPay($booking));
             // Mail::to(env('SYSTEM_EMAIL'))->send(new InitialPay($booking));
-            // Redirect to Paystack payment page
+        } catch (\Exception $e) {
+
+        }
+        try {
+            //code...
             return Paystack::getAuthorizationUrl()->redirectNow();
         } catch (\Exception $e) {
             return Redirect::back()->with('error', 'The paystack token has expired. Please refresh the page and try again.');
         }
+        // Redirect to Paystack payment page
     }
 
     public function redirectToGateway_again(Request $request, $b_id)

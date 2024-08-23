@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="p_a">Price/Annually</label>
-                        <input class="form-control" type="number" id="p_a" name="price_annually" value="{{$space->price_annualy}}">
+                        <input class="form-control" type="number" id="p_a" name="price_annually" value="{{$space->price_annually}}">
                     </div>
                     <div class="col-sm-4">
                         <label class="form-label" for="nop">Number of Persons</label>

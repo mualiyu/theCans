@@ -62,6 +62,8 @@ Route::domain(env("APP_SUB_URL"))->group(function () {
         Route::get('/{space}/space-info', [App\Http\Controllers\SpaceController::class, 'edit'])->name('show_edit_space');
         Route::post('/{space}/space-info', [App\Http\Controllers\SpaceController::class, 'update'])->name('update_space');
 
+        Route::get('/{space}/space-info/bookings', [App\Http\Controllers\BookingController::class, 'space_bookings'])->name('space.bookings');
+
         Route::post('/{space}/delete/', [App\Http\Controllers\SpaceController::class, 'destroy'])->name('delete_space');
     });
 

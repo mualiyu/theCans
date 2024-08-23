@@ -105,7 +105,7 @@ class MainController extends Controller
             SEOMeta::setDescription($news->description);
             SEOMeta::addMeta('article:published_time', $news->created_at->toW3CString(), 'property');
             SEOMeta::addMeta('article:section', $news->categories, 'property');
-            SEOMeta::addKeyword([$news->tags[0]->name, $news->tags[1]->name]);
+            SEOMeta::addKeyword([$news->tags[0]->name]);
 
             OpenGraph::setDescription($news->description);
             OpenGraph::setTitle($news->title);

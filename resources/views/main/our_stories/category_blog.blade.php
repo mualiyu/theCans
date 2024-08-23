@@ -62,7 +62,7 @@
                             </span>
                             <span class="fs-xs opacity-20 mt-2 mx-3">|</span>
                             <?php
-                                for($i=0; $i<=1; $i++){
+                                for($i=0; $i<=0; $i++){
                                     ?>
                                     <a class="badge text-nav fs-xs border mt-2" href="{{route('main.tag_blog', ['tag_name'=> $n->tags[$i]->name ])}}">{{$n->tags[$i]->name}}</a>
                                     <?php

@@ -24,7 +24,7 @@
             <!-- Post -->
             <article class="row g-0 border-0 mb-4">
                 <a class="col-sm-5 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="{{route('main.single_blog',['title'=>$n->title])}}"
-                    style="background-image: url(/storage/news/{{$n->image}}); min-height: 14rem"
+                    style="background-image: url({{$n->image}}); min-height: 14rem"
                     aria-label="Post image"></a>
                 <div class="col-sm-7">
                     <div class="pt-4 pb-sm-4 ps-sm-4 pe-lg-4">

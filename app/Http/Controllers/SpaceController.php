@@ -33,7 +33,7 @@ class SpaceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255', 'unique:spaces'],
-            'imagei' => ['required', 'image', 'max:3500'],
+            'imagei' => ['required', 'image', 'max:12500'],
             'description' => ['required', 'string'],
             'benefit' => ['nullable', 'string'],
             'price_daily' => ['required'],
@@ -102,7 +102,7 @@ class SpaceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
-            'imagei' => ['nullable', 'image', 'max:3500'],
+            'imagei' => ['nullable', 'image', 'max:12500'],
             'description' => ['required', 'string'],
             'benefit' => ['nullable', 'string'],
             'price_daily' => ['required'],

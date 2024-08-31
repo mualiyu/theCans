@@ -7,13 +7,12 @@
 <body>
 
 <input type="text" placeholder="Choose a fruit"
-
   class="flexdatalist form-control"
   data-min-length="1"
   data-searchContain="true"
   multiple="multiple"
+  list="fruit" name="my-fruit">
 
-list="fruit" name="my-fruit">
 <datalist id="fruit">
   <option value="Apples">Apples</option>
   <option value="Bananas">Bananas</option>

@@ -162,7 +162,7 @@
       <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
       <header class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-          <a class="navbar-brand pe-sm-3" href="index.html">
+          <a class="navbar-brand pe-sm-3" href="{{url('/')}}">
               <img src="{{asset('admin_assets/img/imagesa/logo-dark.svg')}}" class="" style="width: 200px">
           </a>
 
@@ -183,17 +183,13 @@
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end my-1">
-
-
               <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="ai-logout fs-lg opacity-70 me-2"></i>Sign out
               </a>
             </div>
           </div>
 
-
           <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
-
           <nav class="collapse navbar-collapse" id="navbarNav">
 
           </nav>

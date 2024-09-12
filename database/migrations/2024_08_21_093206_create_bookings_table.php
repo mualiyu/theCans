@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('space_id')->constrained()->onDelete('cascade'); // Foreign key to spaces table
-            $table->string('b_id'); // E.g., hourly, daily, monthly
+            $table->string('b_id');
             $table->string('booking_type'); // E.g., hourly, daily, monthly
             $table->date('start_date'); // The date the booking starts
             $table->string('customer_first_name');

@@ -30,11 +30,10 @@ new class extends Component {
         try {
             //code...
             Mail::to(env('SYSTEM_EMAIL'))->send(new ContactUs($this->customer_name, $this->customer_email, $this->contactMessage));
+            $this->res = "Comment posted successfully!";
         } catch (\Throwable $th) {
             $this->res = "Failed to post Comment! Try Again.";
         }
-
-        $this->res = "Comment posted successfully!";
 
         sleep(4);
 

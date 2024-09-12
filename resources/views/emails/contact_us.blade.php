@@ -42,7 +42,8 @@
                               <tbody>
                                 <tr>
                                   <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
-                                    <img class="w-24" src="https://www.thecans.ng/wp-content/uploads/2023/03/cropped-cropped-cropped-the-cans-logo-1-768x739.png" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 96px; border-style: none; border-width: 0;" width="96">
+                                    <img class="w-24" src="https://thecans.ng/admin_assets/img/imagesa/logo-dark.svg" alt="Logo" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 96px; border-style: none; border-width: 0;" width="96">
+                                    {{-- <img class="w-24" src="https://www.thecans.ng/wp-content/uploads/2023/03/cropped-cropped-cropped-the-cans-logo-1-768x739.png" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 96px; border-style: none; border-width: 0;" width="96"> --}}
                                   </td>
                                 </tr>
                               </tbody>
@@ -112,7 +113,7 @@
                               </tbody>
                             </table>
                             <div class="text-muted text-center" style="color: #718096;" align="center">
-                              <a href="https://admin.thecans.ng" style="color: #0d6efd;">https://admin.thecans.ng</a> <br>
+                              <a href="https://thecans.ng" style="color: #0d6efd;">https://thecans.ng</a> <br>
                               +234 907 6599 631 <br>
                               +234 907 6599 631
                             </div>

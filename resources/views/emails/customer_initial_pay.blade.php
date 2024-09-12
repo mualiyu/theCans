@@ -126,7 +126,7 @@
                               </tbody>
                             </table>
                             <div class="text-muted text-center" style="color: #718096;" align="center">
-                              <a href="https://admin.thecans.ng" style="color: #0d6efd;">https://admin.thecans.ng</a> <br>
+                              <a href="https://thecans.ng" style="color: #0d6efd;">https://thecans.ng</a> <br>
                               +234 907 6599 631 <br>
                               +234 907 6599 631
                             </div>

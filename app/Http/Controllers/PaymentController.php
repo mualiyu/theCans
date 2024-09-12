@@ -64,6 +64,18 @@ class PaymentController extends Controller
             'metadata' => json_encode([
                 'booking_id' => $booking->id,
                 'space_id' => $booking->space_id,
+                'custom_fields' => [
+                    [
+                        'display_name' => 'Customer Name',
+                        'variable_name' => 'customer_name',
+                        'value' => $booking->customer_first_name ." ". $booking->customer_last_name,
+                    ],
+                    [
+                        'display_name' => 'Customer Phone',
+                        'variable_name' => 'customer_phone',
+                        'value' => $booking->customer_phone,
+                    ]
+                ]
             ]),
             'callback_url' => $callbackUrl,
         ]);
@@ -72,7 +84,6 @@ class PaymentController extends Controller
             Mail::to($booking->customer_email)->send(new InitialPay($booking));
             // Mail::to(env('SYSTEM_EMAIL'))->send(new InitialPay($booking));
         } catch (\Exception $e) {
-
         }
         try {
             //code...

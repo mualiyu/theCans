@@ -51,7 +51,7 @@ class PaymentController extends Controller
             'total_price' => $this->calculateTotalPrice($space, $request->booking_type),
         ]);
 
-        $callbackUrl = route('main.payment_call_back');
+        $callbackUrl = env('PAYSTACK_CALLBACK_URL', 'http://thecans.test/payment/callback');
         // Add additional data to Paystack request
         $request->merge([
             'email' => $booking->customer_email,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\News;
 use App\Models\Space;
 use Illuminate\Http\Request;
@@ -31,6 +32,8 @@ class HomeController extends Controller
 
         $news = News::all();
 
-        return view('admin.home', compact('spaces', 'availableSpaces', 'news'));
+        $bookings = Booking::with(['space', 'payments'])->orderBy('created_at', 'desc')->take(10)->get();
+
+        return view('admin.home', compact('spaces', 'availableSpaces', 'news', 'bookings'));
     }
 }

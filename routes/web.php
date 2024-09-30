@@ -65,7 +65,14 @@ Route::domain(env("APP_SUB_URL"))->group(function () {
         Route::get('/{space}/space-info/bookings', [App\Http\Controllers\BookingController::class, 'space_bookings'])->name('space.bookings');
 
         Route::post('/{space}/delete/', [App\Http\Controllers\SpaceController::class, 'destroy'])->name('delete_space');
+
     });
+
+    Route::middleware('auth')->prefix('/bookings')->group(function () {
+        Route::get('', [App\Http\Controllers\BookingController::class, 'index'])->name('bookings.index');
+        Route::get('/api/{bookingId}', [App\Http\Controllers\BookingController::class, 'getBookingDetails']);
+    });
+
 
     Route::middleware('auth')->prefix('/communities')->group(function () {
         Route::get('', [App\Http\Controllers\CommunityController::class, 'index'])->name('communities');

@@ -221,6 +221,8 @@
                     <a class="nav-link fw-semibold py-2 px-0 {{ Route::currentRouteName() == 'galleries' ? 'active':''}}" href="{{route('galleries')}}"><i class="ai-card fs-5 opacity-60 me-2"></i>Gallery</a>
                     <a class="nav-link fw-semibold py-2 px-0 {{ Route::currentRouteName() == 'spaces' ? 'active':''}}" href="{{route('spaces')}}"><i class="ai-database fs-5 opacity-60 me-2"></i>Spaces</a>
 
+                    <a class="nav-link fw-semibold py-2 px-0 {{ Route::currentRouteName() == 'bookings.index' ? 'active':''}}" href="{{ route('bookings.index') }}"><i class="ai-database fs-5 opacity-60 me-2"></i>Bookings</a>
+
                     <a class="nav-link fw-semibold py-2 px-0 {{ Route::currentRouteName() == 'messages' ? 'active':''}}" href="{{route('messages')}}"><i class="ai-messages fs-5 opacity-60 me-2"></i>Message</a>
                     <a class="nav-link fw-semibold py-2 px-0 {{ Route::currentRouteName() == 'faqs' ? 'active':''}}" href="{{route('faqs')}}"><i class="ai-minimize fs-5 opacity-60 me-2"></i>Faq</a>
 

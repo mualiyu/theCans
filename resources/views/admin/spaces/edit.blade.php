@@ -10,10 +10,10 @@
               <form action="{{route('update_space', ['space'=>$space->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                  <div class="d-flex align-items-center mt-sm-n1 pb- mb-0 mb-lg-1 mb-xl-3">
+                  <div class="d-flex align-items-center justify-content-between mt-sm-n1 pb- mb-0 mb-lg-1 mb-xl-3">
                       <img src="{{$space->image}}" class="w-10" style="width: 100px; right:0;" alt="">
-
-                    </div>
+                      <a href="{{ route('space.bookings', ['space' => $space->id]) }}" class="btn btn-primary">View Bookings</a>
+                  </div>
                     <div class="form-check form-switch">
                       <input type="checkbox" class="form-check-input" name="isActive" id="customSwitch1" {{$space->isActive ? "checked":""}}>
                       <label class="form-check-label" for="customSwitch1"> {{!$space->isActive ? "Toggle this switch to activate space":"Toggle off the switch to deactivate space"}}</label>

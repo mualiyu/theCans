@@ -34,7 +34,7 @@ class PaymentController extends Controller
             'phone' => 'required|string',
         ]);
 
-        // Get space details
+        // Get space detail's
         $space = Space::find($request->space_id);
         $bookingId = $this->generateBookingId();
 

@@ -24,11 +24,18 @@
     <div id="spacesection{{$space->id}}"></div>
     <div class="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4">
         <div class="col-md-7 col-lg-6 mb-4 mb-md-0">
+            {{-- Original code with animation:
             <a class="d-block position-relative" href="#">
                 <div class="bg-primary rounded-5 position-absolute top-0 start-0 w-100 h-100 aos-init aos-animate"
                     data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250"></div>
                 <img class="d-block position-relative z-2 w-90 mx-auto aos-init aos-animate" src="{{$space->image}}"
                     width="500" alt="Image" data-aos="fade-in" data-aos-duration="400" data-aos-offset="250">
+            </a>
+            --}}
+            <a class="d-block position-relative" href="#">
+                <div class="bg-primary rounded-5 position-absolute top-0 start-0 w-100 h-100"></div>
+                <img class="d-block position-relative z-2 w-90 mx-auto" src="{{$space->image}}"
+                    width="500" alt="Image">
             </a>
         </div>
         <div class="col-md-5 col-xl-4 offset-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-duration="400"

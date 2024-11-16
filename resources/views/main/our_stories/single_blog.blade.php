@@ -33,9 +33,9 @@
                                 {{ explode('.', $news->created_at->diffInHours(now()))[0] }}
                                 Hours Ago
                                 @endif --}}
-                                {{$news->created_at->diffForHumans()}}
+                                {{$news->created_at->format('F j, Y g:i A')}}
                                 <span class="d-block position-absolute start-0 bottom-0 w-100"
-                                    style="background-color: currentColor; height: 1px;"></span>
+                                    style="background-color: currentColor; height: 1px;"> by <a href="#">Ashley Best</a></span>
                     </a>
                 </div>
                 <div class="d-flex align-items-center mb-4">

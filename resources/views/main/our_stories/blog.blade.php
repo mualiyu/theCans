@@ -45,7 +45,7 @@
                             <span class="fs-xs opacity-20 mt-2 mx-3">|</span>
                             --}}
                             <span class="fs-sm text-body-secondary mt-2">
-                                @if ($n->created_at->diffInHours(now()) < 1)
+                                {{-- @if ($n->created_at->diffInHours(now()) < 1)
                                     @if ($n->created_at->diffInMinutes(now()) < 1)
                                     {{ explode('.', $n->created_at->diffInSeconds(now()))[0] }}
                                     Seconds Ago
@@ -56,7 +56,8 @@
                                 @else
                                 {{  explode('.', $n->created_at->diffInHours(now()))[0] }}
                                 Hours Ago
-                                @endif
+                                @endif --}}
+                                {{$n->created_at->diffForHumans()}}
                             </span>
                             <span class="fs-xs opacity-20 mt-2 mx-3">|</span>
                             <?php
@@ -172,13 +173,13 @@
                     </div>
 
                     <!-- Banner -->
-                    <div class="position-relative mb-3">
+                    {{-- <div class="position-relative mb-3">
                         <div class="position-absolute w-100 text-center top-0 start-50 translate-middle-x pt-4"
                             style="max-width: 15rem;" data-bs-theme="light">
                             <h3 class="h2 pt-3 mb-0">The CANs Park Banner</h3>
                         </div>
                         <img class="rounded-5" src="/assets/img/blog/sidebar/banner.jpg" alt="The Can's Banner">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </aside>

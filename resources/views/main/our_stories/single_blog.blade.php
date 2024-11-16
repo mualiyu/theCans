@@ -22,7 +22,7 @@
                     {{-- <span class="fs-sm me-2">By:</span> --}}
                     <a class="nav-link position-relative fw-semibold p-0" href="#" data-scroll=""
                         data-scroll-offset="80">
-                        @if ($news->created_at->diffInHours(now()) < 1) @if ($news->created_at->diffInMinutes(now()) <
+                        {{-- @if ($news->created_at->diffInHours(now()) < 1) @if ($news->created_at->diffInMinutes(now()) <
                                 1) {{ explode('.', $news->created_at->diffInSeconds(now()))[0] }}
                                 Seconds Ago
                                 @else
@@ -32,7 +32,8 @@
                                 @else
                                 {{ explode('.', $news->created_at->diffInHours(now()))[0] }}
                                 Hours Ago
-                                @endif
+                                @endif --}}
+                                {{$news->created_at->diffForHumans()}}
                                 <span class="d-block position-absolute start-0 bottom-0 w-100"
                                     style="background-color: currentColor; height: 1px;"></span>
                     </a>

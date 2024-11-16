@@ -35,7 +35,7 @@
                                 @endif --}}
                                 {{$news->created_at->format('F j, Y g:i A')}}
                                 <span class="d-block position-absolute start-0 bottom-0 w-100"
-                                    style="background-color: currentColor; height: 1px;"> by <a href="#">Ashley Best</a></span>
+                                    style="background-color: currentColor; height: 1px;"></span>
                     </a>
                 </div>
                 <div class="d-flex align-items-center mb-4">
